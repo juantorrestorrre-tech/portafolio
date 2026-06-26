@@ -628,12 +628,37 @@
 
     @media (max-width: 640px) {
       .project-overlay { opacity: 1; transform: none; background: rgba(15,15,15,0.72); }
-      .exp-mascot { height: 160px; right: 10px; bottom: -30px; }
-      .exp-banner-inner { padding: 2rem 1.5rem; }
-      .exp-logo-text { font-size: 1.3rem; }
-      .exp-description { font-size: 0.85rem; }
-      .header-photo, .photo-placeholder { width: 200px; height: 280px; }
-      .header-carousel-item { width: 260px; height: 200px; }
+      .exp-mascot { height: 100px; right: 4px; bottom: -15px; }
+      .exp-banner-inner { padding: 1.25rem 1rem; }
+      .exp-logo-text { font-size: 1rem; }
+      .exp-description { font-size: 0.78rem; max-width: 100%; }
+      .header-photo, .photo-placeholder { width: 140px; height: 200px; }
+      .header-carousel-item { width: 180px; height: 130px; }
+      .exp-btn-expand { padding: 8px 16px; font-size: 0.7rem; margin-top: 0.75rem; gap: 6px; }
+      .footer-link { font-size: 0.8rem; }
+      .exp-projects-grid .grid { gap: 0.4rem; padding: 0.5rem 0.25rem; }
+      .project-title { font-size: 0.75rem; }
+      .project-desc { font-size: 0.6rem; }
+      .project-overlay { padding: 0.6rem; }
+      .project-overlay span { font-size: 0.5rem !important; margin-bottom: 4px !important; }
+      .edu-card { gap: 8px; padding: 8px 0; }
+      .edu-name { font-size: 0.75rem; }
+      .edu-inst { font-size: 0.68rem; }
+      .edu-logo { width: 36px; height: 36px; }
+      .edu-logo img { width: 28px; height: 28px; }
+      .sw-card { gap: 6px; padding: 6px 0; }
+      .sw-name { font-size: 0.72rem; }
+      .sw-logo { width: 36px; height: 36px; }
+      .sw-logo img { width: 28px; height: 28px; }
+      nav .nav-link { font-size: 0.65rem; }
+      nav { padding-left: 1rem; padding-right: 1rem; }
+      .theme-toggle { width: 40px; height: 22px; }
+      .toggle-thumb { width: 15px; height: 15px; font-size: 8px; }
+      [data-theme="dark"] .toggle-thumb { transform: translateX(18px); }
+      #experiencia { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+      .lightbox-content img { max-height: 60vh; }
+      .lightbox { padding: 1rem; }
+      .exp-banner { min-height: 240px; }
     }
     /* ── SCROLL REVEAL ── */
     .reveal {
@@ -691,7 +716,7 @@
   <nav style="background:var(--nav-bg); border-bottom:1px solid var(--border);"
        class="sticky top-0 z-50 backdrop-blur-sm">
     <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-      <span style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:0.85rem; letter-spacing:0.2em; color:var(--text-main);">JFTT</span>
+      <span style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:0.85rem; letter-spacing:0.2em; color:var(--text-main);">JUAN&nbsp;</span>
       <div class="flex items-center gap-6 md:gap-8">
         <a href="#sobre-mi"    class="nav-link hidden sm:block">Sobre mí</a>
         <a href="#experiencia" class="nav-link hidden sm:block">Experiencia</a>
@@ -804,7 +829,7 @@
   <!-- ══════════════════════════════════════════
        FORMACIÓN + SOFTWARE (lado a lado)
   ══════════════════════════════════════════ -->
-  <section class="max-w-7xl mx-auto px-6 pb-16 reveal">
+  <section class="max-w-7xl mx-auto px-6 pb-8 reveal">
 
     <div class="grid md:grid-cols-2 gap-12 items-start">
 
@@ -922,7 +947,7 @@
   <!-- ══════════════════════════════════════════
        EXPERIENCIA — Banners con carrusel
   ══════════════════════════════════════════ -->
-  <section id="experiencia" class="max-w-7xl mx-auto px-6 py-16 reveal">
+  <section id="experiencia" class="max-w-7xl mx-auto px-6 py-10 reveal">
 
     <div class="editorial-divider">
       <span class="section-label">Experiencia</span>
@@ -1023,7 +1048,7 @@
               <div class="project-overlay">
                 <span style="font-family:'Space Grotesk',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:#888;margin-bottom:6px;">Laika</span>
                 <p class="project-title">Laikaween</p>
-                <p class="project-desc">Concepto principal del Halloween 2025 visto en canales digitales, branding en tiendas y activaciones pop</p>
+                <p class="project-desc">Concepto principal de Halloween 2025 visto en canales digitales, branding en tiendas y activaciones pop</p>
               </div>
             </div>
             <div class="project-card aspect-square" onclick="openLightbox(this)">
@@ -1054,7 +1079,7 @@
               <img src="assets/img/laika/laika-mg-06.jpg" alt="MG 6" />
               <div class="project-overlay">
                 <span style="font-family:'Space Grotesk',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:#888;margin-bottom:6px;">Laika</span>
-                <p class="project-title">Misión Galactica</p>
+                <p class="project-title">Misión Galáctica</p>
                 <p class="project-desc">Gráfica usada en promoción durante el mes de julio 2026</p>
               </div>
             </div>
@@ -1271,7 +1296,7 @@
               <img src="assets/img/apex/apex-interno-02.jpg" alt="Interno 2" />
               <div class="project-overlay">
                 <span style="font-family:'Space Grotesk',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:#888;margin-bottom:6px;">Apex America</span>
-                <p class="project-title">Evaluacion mensual</p>
+                <p class="project-title">Evaluación mensual</p>
                 <p class="project-desc">Encuesta de satisfacción interna</p>
               </div>
             </div>
@@ -1327,7 +1352,7 @@
               <img src="assets/img/apex/apex-interno-09.jpg" alt="Interno 9" />
               <div class="project-overlay">
                 <span style="font-family:'Space Grotesk',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:#888;margin-bottom:6px;">Apex America</span>
-                <p class="project-title">Maraton Apex 2024</p>
+                <p class="project-title">Maratón Apex 2024</p>
                 <p class="project-desc">Convocatoria para inscripción a la maratón </p>
               </div>
             </div>
@@ -1471,7 +1496,7 @@
       <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
         <div>
           <p style="font-family:'Space Grotesk',sans-serif;font-size:2.6rem;font-weight:700;line-height:1;margin-bottom:0.75rem;">
-            Hablemos
+            ¡Hablemos!
           </p>
           <p style="font-family:'Inter',sans-serif;font-size:1.1rem;color:#888;max-width:400px;line-height:1.6;">
             Si tienes un proyecto en mente o quieres colaborar, escríbeme.
@@ -1479,16 +1504,16 @@
         </div>
         <div style="text-align:right;">
           <p style="font-family:'Space Grotesk',sans-serif;font-size:0.85rem;letter-spacing:0.14em;text-transform:uppercase;color:#777;margin-bottom:0.6rem;">Contacto</p>
-          <a href="mailto:juan.torres@email.com" style="font-family:'Space Grotesk',sans-serif;font-size:1.35rem;color:#fff;text-decoration:none;transition:color 0.2s;display:block;margin-bottom:0.4rem;" onmouseover="this.style.color='#7D39EB'" onmouseout="this.style.color='#fff'">juan.torres@email.com</a>
-          <a href="#" class="footer-link">LinkedIn</a>
+          <a href="mailto:felixxtobar@gmail.com" style="font-family:'Space Grotesk',sans-serif;font-size:1.35rem;color:#fff;text-decoration:none;transition:color 0.2s;display:block;margin-bottom:0.4rem;" onmouseover="this.style.color='#7D39EB'" onmouseout="this.style.color='#fff'">felixxtobar@gmail.com</a>
+          <a href="https://www.linkedin.com/in/juan-torres-gerencia-de-marca" class="footer-link" target="_blank">LinkedIn</a>
           <span style="color:#444;margin:0 6px;">·</span>
-          <a href="#" class="footer-link">Behance</a>
+          <a href="https://www.behance.net/felixxtoba2985" class="footer-link" target="_blank">Behance</a>
           <span style="color:#444;margin:0 6px;">·</span>
-          <a href="#" class="footer-link">Instagram</a>
+          <a href="https://www.instagram.com/juan_ttorress/" class="footer-link" target="_blank">Instagram</a>
         </div>
       </div>
       <div style="border-top:1px solid var(--footer-border, #333);margin-top:3rem;padding-top:1.5rem;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem;">
-        <p style="font-family:'Inter',sans-serif;font-size:0.85rem;color:var(--footer-muted, #666);">&copy; 2025 Juan Felipe Torres Torres</p>
+        <p style="font-family:'Inter',sans-serif;font-size:0.85rem;color:var(--footer-muted, #666);">&copy; 2026 Juan Felipe Torres Torres</p>
         <p style="font-family:'Inter',sans-serif;font-size:0.85rem;color:var(--footer-muted, #666);">Diseño gráfico &amp; branding</p>
       </div>
     </div>
