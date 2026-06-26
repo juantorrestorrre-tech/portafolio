@@ -1,0 +1,1901 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Juan Felipe Torres Torres — Diseñador Gráfico</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Space Grotesk', 'sans-serif'],
+            body:    ['Inter', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /*
+    ============================================================
+    ESTRUCTURA DE CARPETAS RECOMENDADA
+    ============================================================
+    mi-portafolio/
+    ├── index.html
+    └── assets/
+        ├── img/
+        │   ├── foto-perfil.jpg
+        │   ├── logos/
+        │   │   ├── empresas/
+        │   │   │   ├── laika.svg            → Logo Laika
+        │   │   │   ├── swimmer.svg          → Logo Swimmer LTDA
+        │   │   │   ├── apex.svg             → Logo Apex America
+        │   │   │   └── fincaraiz.svg        → Logo Finca Raíz
+        │   │   └── edu/
+        │   │       ├── areandina.png        → Logo Universidad Areandina
+        │   │       ├── instituto-branding.png → Logo instituto branding
+        │   │       ├── instituto-marketing.png → Logo instituto marketing
+        │   │       └── instituto-adobe.png  → Logo instituto Adobe CC
+        │   ├── laika/
+        │   │   ├── laika-01.jpg
+        │   │   ├── laika-02.jpg
+        │   │   └── ... (hasta laika-13.jpg)
+        │   ├── swimmer/
+        │   │   ├── swimmer-01.jpg
+        │   │   └── ... (hasta swimmer-04.jpg)
+        │   ├── apex/
+        │   │   ├── apex-01.jpg
+        │   │   └── apex-02.jpg
+        │   ├── fincaraiz/
+        │   │   ├── fincaraiz-01.jpg
+        │   │   └── fincaraiz-02.jpg
+        │   ├── carrusel/
+        │   │   ├── pieza-01.jpg
+        │   │   └── ... (piezas generales)
+        │   └── mascotas/
+        │       ├── laika-perro.png          → Elemento que sobresale del banner Laika
+        │       ├── swimmer-nadador.png      → Elemento que sobresale del banner Swimmer
+        │       ├── apex-america.png         → Elemento que sobresale del banner Apex
+        │       └── fincaraiz-casa.png       → Elemento que sobresale del banner Finca Raíz
+        └── (otros recursos si se requieren)
+    ============================================================
+    INSTRUCCIONES PARA LAS IMÁGENES:
+    - Logos de empresas: SVG vectorial preferiblemente (mejor calidad).
+      Si no tienes SVG, usa PNG con fondo transparente, mínimo 200×200 px.
+    - Logos de educación: PNG con fondo transparente, 80×80 px mínimo.
+    - Fotos de proyectos: JPG o WebP, 1200×900 px mínimo, optimizadas para web.
+    - Mascotas/ilustraciones: PNG con fondo transparente, la imagen debe tener
+      espacio extra abajo para que parezca que "sale" del banner.
+      Ejemplo: el perro de Laika debe estar recortado (sin fondo) para que
+      sobresalga visualmente del banner.
+    ============================================================
+    */
+
+    :root {
+      --c-black:  #000000;
+      --c-violet: #7D39EB;
+      --c-lime:   #C8FF33;
+      --c-white:  #FFFFFF;
+
+      --bg:                 #FFFFFF;
+      --bg-soft:            #F5F5F5;
+      --bg-card:            #EFEFEF;
+      --text-main:          #0F0F0F;
+      --text-muted:         #5A5A5A;
+      --text-light:         #8A8A8A;
+      --border:             #D4D4D4;
+      --nav-bg:             rgba(255,255,255,0.92);
+      --badge-bg:           #FFFFFF;
+      --badge-text:         #0F0F0F;
+      --badge-border:       #0F0F0F;
+      --section-label-bg:   #000000;
+      --section-label-text: #FFFFFF;
+      --footer-bg:          #000000;
+      --footer-text:        #FFFFFF;
+      --overlay-bg:         rgba(15,15,15,0.88);
+      --noise-opacity:      0.025;
+      --particle-opacity:   0.25;
+      --frosted-bg:         rgba(248,248,248,0.25);
+      --frosted-grid:       rgba(0,0,0,0.09);
+      --tag-bg:             rgba(255,255,255,0.82);
+    }
+
+    [data-theme="dark"] {
+      --bg:                 #0F0F0F;
+      --bg-soft:            #1A1A1A;
+      --bg-card:            #222222;
+      --text-main:          #FFFFFF;
+      --text-muted:         #AAAAAA;
+      --text-light:         #666666;
+      --border:             #333333;
+      --nav-bg:             rgba(15,15,15,0.95);
+      --badge-bg:           #1A1A1A;
+      --badge-text:         #FFFFFF;
+      --badge-border:       #555555;
+      --section-label-bg:   var(--c-violet);
+      --section-label-text: #FFFFFF;
+      --footer-bg:          #000000;
+      --footer-text:        #FFFFFF;
+      --overlay-bg:         rgba(0,0,0,0.92);
+      --noise-opacity:      0.05;
+      --particle-opacity:   0.35;
+      --frosted-bg:         rgba(10,10,10,0.35);
+      --frosted-grid:       rgba(255,255,255,0.09);
+      --tag-bg:             rgba(30,30,30,0.85);
+      --footer-bg:          #FFFFFF;
+      --footer-text:        #0F0F0F;
+      --footer-muted:       #444444;
+      --footer-border:      #DDDDDD;
+    }
+    [data-theme="dark"] .footer-link { color: var(--footer-muted); }
+    [data-theme="dark"] .footer-link:hover { color: var(--c-violet); }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      transition: background-color 0.3s ease, color 0.3s ease;
+      position: relative;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background: radial-gradient(ellipse 80% 60% at 20% 30%, rgba(125,57,235,0.04) 0%, transparent 60%),
+                  radial-gradient(ellipse 60% 50% at 80% 70%, rgba(200,255,51,0.03) 0%, transparent 60%),
+                  radial-gradient(ellipse 50% 40% at 50% 50%, rgba(125,57,235,0.02) 0%, transparent 50%);
+      background-size: 200% 200%;
+      animation: gradient-drift 20s ease-in-out infinite alternate;
+      pointer-events: none;
+    }
+    @keyframes gradient-drift {
+      0%   { background-position: 0% 0%; }
+      50%  { background-position: 100% 100%; }
+      100% { background-position: 50% 50%; }
+    }
+
+    /* ── NOISE GRAIN ── */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      opacity: var(--noise-opacity);
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 200px 200px;
+    }
+
+    /* ── PARTICULAS FLOTANTES ── */
+    .particle {
+      position: fixed;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 1;
+      animation: float-particle linear infinite;
+    }
+    @keyframes float-particle {
+      0%   { transform: translateY(100vh) translateX(0) scale(1); opacity: 0; }
+      10%  { opacity: 0.7; }
+      90%  { opacity: 0.7; }
+      100% { transform: translateY(-10vh) translateX(40px) scale(0.5); opacity: 0; }
+    }
+
+    /* ── GRID INTERACTIVO ── */
+    #interactiveGrid {
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .section-label {
+      display: inline-block;
+      background-color: var(--section-label-bg);
+      color: var(--section-label-text);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+    }
+
+    .header-photo {
+      width: 260px; height: 380px;
+      object-fit: cover;
+      object-position: top center;
+      filter: grayscale(100%);
+      transition: filter 0.4s ease;
+    }
+    .header-photo:hover { filter: grayscale(0%); }
+
+    .photo-placeholder {
+      width: 260px; height: 380px;
+      background: var(--bg-card);
+      display: flex; align-items: center;
+      justify-content: center;
+      flex-direction: column; gap: 8px;
+    }
+
+    .editorial-divider {
+      display: flex; align-items: center;
+      gap: 1.5rem; margin: 3rem 0 2rem;
+    }
+    .editorial-divider .divider-line {
+      flex: 1; height: 1px;
+      background: var(--border);
+    }
+
+    .nav-link {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.8rem; font-weight: 500;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--text-muted);
+      transition: color 0.2s ease;
+    }
+    .nav-link:hover { color: var(--c-violet); }
+
+    .theme-toggle {
+      background: none;
+      border: 1.5px solid var(--border);
+      border-radius: 999px;
+      width: 48px; height: 26px;
+      position: relative; cursor: pointer;
+      display: flex; align-items: center;
+      padding: 0 4px; flex-shrink: 0;
+      transition: border-color 0.3s;
+    }
+    .theme-toggle:hover { border-color: var(--c-violet); }
+    .toggle-thumb {
+      width: 18px; height: 18px;
+      border-radius: 50%;
+      background: var(--text-main);
+      transition: transform 0.3s ease, background 0.3s ease;
+      display: flex; align-items: center;
+      justify-content: center;
+      font-size: 10px; line-height: 1;
+    }
+    [data-theme="dark"] .toggle-thumb {
+      transform: translateX(22px);
+      background: var(--c-lime);
+    }
+
+    .img-placeholder {
+      width: 100%; height: 100%; min-height: 220px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      background: var(--bg-card); gap: 12px;
+    }
+    .img-placeholder-icon { width: 40px; height: 40px; opacity: 0.35; }
+
+    .project-card {
+      position: relative; overflow: hidden;
+      background: var(--bg-card); cursor: pointer;
+      border-radius: 8px;
+    }
+    .project-card img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+      transition: transform 0.5s cubic-bezier(0.25,0.46,0.45,0.94), filter 0.5s ease;
+      filter: grayscale(20%);
+    }
+    .project-overlay {
+      position: absolute; inset: 0;
+      background: var(--overlay-bg);
+      display: flex; flex-direction: column;
+      justify-content: flex-end; padding: 1.5rem;
+      opacity: 0; transform: translateY(8px);
+      transition: opacity 0.35s ease, transform 0.35s ease;
+    }
+    .project-card:hover img  { transform: scale(1.04); filter: grayscale(0%); }
+    .project-card:hover .project-overlay { opacity: 1; transform: translateY(0); }
+
+    .aspect-square { aspect-ratio: 1 / 1; }
+    .aspect-\[3/4\] { aspect-ratio: 3 / 4; }
+
+    .project-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600; font-size: 0.95rem; color: #fff;
+      margin-bottom: 4px;
+    }
+    .project-desc {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem; color: #ccc;
+      line-height: 1.5;
+    }
+
+    /* ── BANNER EXPERIENCIA ── */
+    .exp-banner {
+      position: relative;
+      overflow: visible;
+      min-height: 320px;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: center;
+      border-radius: 12px;
+    }
+    .exp-banner-inner {
+      position: relative;
+      z-index: 2;
+      padding: 3rem 2rem;
+      width: 100%;
+      overflow: visible;
+    }
+    .exp-mascot {
+      position: absolute;
+      right: 30px;
+      height: 360px;
+      width: auto;
+      z-index: 10;
+      pointer-events: none;
+      transition: transform 0.6s cubic-bezier(0.4,0,0.2,1);
+    }
+    .exp-mascot img {
+      height: 100%;
+      width: auto;
+      object-fit: contain;
+    }
+
+
+    .exp-btn-expand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 28px;
+      background: #FFFFFF;
+      color: #0F0F0F;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      margin-top: 1.5rem;
+    }
+    .exp-btn-expand:hover {
+      background: #f0f0f0;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    }
+    .exp-btn-expand.active {
+      background: rgba(255,255,255,0.85);
+    }
+
+    .exp-projects-grid {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.6s cubic-bezier(0.4,0,0.2,1), opacity 0.5s ease;
+      opacity: 0;
+    }
+    .exp-projects-grid.open {
+      max-height: 6000px;
+      opacity: 1;
+    }
+
+    /* ── LIGHTBOX ── */
+    .lightbox {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.92);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      padding: 2rem;
+    }
+    .lightbox.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .lightbox-content {
+      position: relative;
+      max-width: 90vw;
+      max-height: 85vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .lightbox-content img {
+      max-width: 100%;
+      max-height: 75vh;
+      object-fit: contain;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+    }
+    .lightbox-info {
+      margin-top: 1rem;
+      text-align: center;
+      color: #ccc;
+    }
+    .lightbox-info h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      color: #fff;
+      font-size: 1.1rem;
+      margin-bottom: 4px;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+      z-index: 10;
+    }
+    .lightbox-close:hover { opacity: 1; }
+
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #fff;
+      font-size: 1.4rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+      z-index: 10;
+    }
+    .lightbox-nav:hover { background: rgba(255,255,255,0.25); }
+    .lightbox-nav.prev { left: -60px; }
+    .lightbox-nav.next { right: -60px; }
+    @media (max-width: 640px) {
+      .lightbox-nav.prev { left: 10px; }
+      .lightbox-nav.next { right: 10px; }
+      .lightbox-nav { width: 36px; height: 36px; font-size: 1rem; }
+    }
+
+    .exp-logo-text {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.8rem; font-weight: 700;
+    }
+
+    .exp-description {
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      line-height: 1.7;
+      max-width: 600px;
+      opacity: 0.9;
+    }
+
+    .edu-card {
+      display: flex; align-items: center;
+      gap: 14px; padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .edu-card:last-child { border-bottom: none; }
+    .edu-logo {
+      width: 44px; height: 44px; border-radius: 8px;
+      background: var(--bg-card); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; overflow: hidden;
+    }
+    .edu-logo img { width: 36px; height: 36px; object-fit: contain; }
+    .edu-logo-placeholder {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.65rem; font-weight: 700;
+      color: var(--c-violet); text-align: center; line-height: 1.1;
+    }
+    .edu-name { font-family: 'Space Grotesk', sans-serif; font-size: 0.85rem; font-weight: 600; color: var(--text-main); line-height: 1.3; }
+    .edu-inst { font-family: 'Inter', sans-serif; font-size: 0.75rem; color: var(--text-muted); margin-top: 2px; }
+    .edu-year { font-family: 'Inter', sans-serif; font-size: 0.72rem; color: var(--text-light); margin-top: 1px; }
+
+    .sw-card {
+      display: flex; align-items: center;
+      gap: 10px; padding: 9px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .sw-card:last-child { border-bottom: none; }
+    .sw-logo {
+      width: 44px; height: 44px; border-radius: 8px;
+      background: var(--bg-card); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; overflow: hidden;
+    }
+    .sw-logo img { width: 36px; height: 36px; object-fit: contain; }
+    .sw-name { font-family: 'Space Grotesk', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--text-main); }
+    .sw-role { font-family: 'Inter', sans-serif; font-size: 0.68rem; color: var(--text-muted); margin-top: 1px; }
+
+    .carousel-track {
+      display: flex; gap: 16px;
+      width: max-content;
+      animation: slide-left 32s linear infinite;
+    }
+    .carousel-track:hover { animation-play-state: paused; }
+    @keyframes slide-left {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .carousel-item {
+      width: 280px; height: 200px;
+      flex-shrink: 0; overflow: hidden;
+      background: var(--bg-card);
+    }
+    .carousel-item img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      transition: transform 0.4s ease;
+    }
+    .carousel-item:hover img { transform: scale(1.05); }
+
+    /* ── HEADER BACKGROUND CAROUSEL ── */
+    .header-bg-wrap {
+      position: relative;
+      overflow: hidden;
+      box-shadow: inset 0 -1px 0 rgba(0,0,0,0.06);
+    }
+    .header-carousel {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .header-carousel-track {
+      display: flex;
+      gap: 0;
+      width: max-content;
+      height: 100%;
+      align-items: center;
+      animation: h-scroll 45s linear infinite;
+    }
+    .header-carousel-track:hover { animation-play-state: paused; }
+    @keyframes h-scroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .header-carousel-item {
+      width: 420px;
+      height: 320px;
+      flex-shrink: 0;
+      overflow: hidden;
+      opacity: 0.25;
+      transition: opacity 0.5s ease;
+    }
+    .header-carousel-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(0.7);
+      transition: filter 0.5s ease;
+    }
+    .header-carousel-track:hover .header-carousel-item {
+      opacity: 0.5;
+    }
+    .header-carousel-track:hover .header-carousel-item img {
+      filter: grayscale(0.4);
+    }
+    .frosted-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      display: flex;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .glass-stripe {
+      flex: 1 0 0;
+      min-width: 0;
+      position: relative;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      background: rgba(128,128,128,0.03);
+      border-right: 0.5px solid rgba(255,255,255,0.05);
+      box-shadow: -0.5px 0 2px rgba(0,0,0,0.04);
+    }
+
+    .footer-link {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1rem; letter-spacing: 0.06em;
+      color: #777; transition: color 0.2s ease;
+    }
+    .footer-link:hover { color: var(--c-lime); }
+
+    @media (max-width: 640px) {
+      .project-overlay { opacity: 1; transform: none; background: rgba(15,15,15,0.72); }
+      .exp-mascot { height: 160px; right: 10px; bottom: -30px; }
+      .exp-banner-inner { padding: 2rem 1.5rem; }
+      .exp-logo-text { font-size: 1.3rem; }
+      .exp-description { font-size: 0.85rem; }
+      .header-photo, .photo-placeholder { width: 200px; height: 280px; }
+      .header-carousel-item { width: 260px; height: 200px; }
+    }
+    /* ── SCROLL REVEAL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── CURSOR PERSONALIZADO ── */
+    .cursor-dot {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      border: 1.5px solid var(--c-violet);
+      background: transparent;
+      position: fixed;
+      pointer-events: none;
+      z-index: 99999;
+      transform: translate(-50%, -50%);
+      transition: width 0.2s ease, height 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    }
+    .cursor-dot.hovering {
+      width: 56px; height: 56px;
+      background: rgba(125,57,235,0.12);
+      border-color: var(--c-violet);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .project-card img, .project-overlay,
+      .carousel-track, .header-carousel-track, .toggle-thumb, .reveal { transition: none; animation: none; }
+      .header-carousel-item { opacity: 0.3; }
+      .cursor-dot { display: none; }
+      .particle { display: none !important; }
+      #interactiveGrid { display: none !important; }
+    }
+  </style>
+</head>
+
+<body class="antialiased">
+
+  <!-- Cursor personalizado -->
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <!-- Grid interactivo -->
+  <canvas id="interactiveGrid"></canvas>
+
+  <!-- Partículas flotantes se generan con JS -->
+
+  <!-- ══════════════════════════════════════════
+       NAVEGACIÓN
+  ══════════════════════════════════════════ -->
+  <nav style="background:var(--nav-bg); border-bottom:1px solid var(--border);"
+       class="sticky top-0 z-50 backdrop-blur-sm">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <span style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:0.85rem; letter-spacing:0.2em; color:var(--text-main);">JFTT</span>
+      <div class="flex items-center gap-6 md:gap-8">
+        <a href="#sobre-mi"    class="nav-link hidden sm:block">Sobre mí</a>
+        <a href="#experiencia" class="nav-link hidden sm:block">Experiencia</a>
+        <a href="#contacto"    class="nav-link hidden sm:block">Contacto</a>
+        <button class="theme-toggle" id="themeToggle" title="Cambiar tema" aria-label="Cambiar tema">
+          <span class="toggle-thumb" id="toggleIcon">☀️</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ══════════════════════════════════════════
+       HEADER — Foto · Nombre · Keywords
+       Con carrusel de fondo + efecto frosted glass
+  ══════════════════════════════════════════ -->
+  <section class="header-bg-wrap">
+    <div class="header-carousel" aria-hidden="true" style="display:none;">
+      <div class="header-carousel-track">
+        <div class="header-carousel-item"><img src="assets/img/laika/laika-pauta-01.jpg" alt="" /></div>
+        <div class="header-carousel-item"><img src="assets/img/laika/laika-mg-03.jpg" alt="" /></div>
+        <div class="header-carousel-item"><img src="assets/img/laika/laika-redes-01.jpg" alt="" /></div>
+        <div class="header-carousel-item"><img src="assets/img/laika/laika-mg-07.jpg" alt="" /></div>
+        <div class="header-carousel-item"><img src="assets/img/laika/laika-pauta-05.jpg" alt="" /></div>
+        <div class="header-carousel-item"><img src="assets/img/swimmer/swimmer-redes-02.jpg" alt="" /></div>
+        <div class="header-carousel-item"><img src="assets/img/swimmer/swimmer-redes-04.jpg" alt="" /></div>
+        <div class="header-carousel-item"><img src="assets/img/swimmer/swimmer-redes-01.jpg" alt="" /></div>
+        <div class="header-carousel-item"><img src="assets/img/swimmer/swimmer-redes-03.jpg" alt="" /></div>
+        <div class="header-carousel-item"><img src="assets/img/swimmer/swimmer-redes-05.jpg" alt="" /></div>
+        <!-- Duplicado para loop sin costuras -->
+        <div class="header-carousel-item"><img src="assets/img/laika/laika-pauta-01.jpg" alt="" /></div>
+        <div class="header-carousel-item"><img src="assets/img/laika/laika-mg-03.jpg" alt="" /></div>
+        <div class="header-carousel-item"><img src="assets/img/laika/laika-redes-01.jpg" alt="" /></div>
+        <div class="header-carousel-item"><img src="assets/img/laika/laika-mg-07.jpg" alt="" /></div>
+        <div class="header-carousel-item"><img src="assets/img/laika/laika-pauta-05.jpg" alt="" /></div>
+        <div class="header-carousel-item"><img src="assets/img/swimmer/swimmer-redes-02.jpg" alt="" /></div>
+        <div class="header-carousel-item"><img src="assets/img/swimmer/swimmer-redes-04.jpg" alt="" /></div>
+        <div class="header-carousel-item"><img src="assets/img/swimmer/swimmer-redes-01.jpg" alt="" /></div>
+        <div class="header-carousel-item"><img src="assets/img/swimmer/swimmer-redes-03.jpg" alt="" /></div>
+        <div class="header-carousel-item"><img src="assets/img/swimmer/swimmer-redes-05.jpg" alt="" /></div>
+      </div>
+    </div>
+    <div class="frosted-overlay"></div>
+    <header class="max-w-7xl mx-auto px-6 pt-20 pb-16 reveal" style="position:relative;z-index:2;">
+      <div class="flex flex-col md:flex-row items-start gap-8">
+
+      <div class="shrink-0" style="filter:drop-shadow(0 4px 20px rgba(0,0,0,0.35));">
+        <img class="header-photo" src="assets/img/foto-perfil.jpg" alt="Juan Felipe Torres Torres" />
+      </div>
+
+        <div class="flex-1">
+        <p style="font-family:'Space Grotesk',sans-serif; font-size:0.72rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--text-light); margin-bottom:0.5rem; text-shadow:0 2px 12px rgba(0,0,0,0.4);">
+          Portafolio · Diseño Gráfico
+        </p>
+
+        <h1 style="font-family:'Space Grotesk',sans-serif; font-weight:700; line-height:0.95; color:var(--text-main); font-size:clamp(2.8rem,8vw,6rem); margin-bottom:1.5rem; text-shadow:0 2px 16px rgba(0,0,0,0.45);">
+          Juan Felipe<br/>
+          <span style="font-weight:300;">Torres Torres</span>
+        </h1>
+
+        <div class="flex flex-wrap gap-x-3 gap-y-1 items-center" style="background:var(--tag-bg);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);padding:8px 14px;border-radius:8px;box-shadow:0 2px 12px rgba(0,0,0,0.15);">
+            <div style="width:48px; height:1px; background:var(--c-violet); flex-shrink:0;"></div>
+            <span style="font-family:'Space Grotesk',sans-serif; font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-muted);">Diseñador Gráfico</span>
+            <span style="color:var(--c-violet); font-size:0.7rem;">·</span>
+            <span style="font-family:'Space Grotesk',sans-serif; font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-muted);">Branding &amp; Comunicación Corporativa</span>
+            <span style="color:var(--c-violet); font-size:0.7rem;">·</span>
+            <span style="font-family:'Space Grotesk',sans-serif; font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-muted);">Gestión de Marca</span>
+            <span style="color:var(--c-violet); font-size:0.7rem;">·</span>
+            <span style="font-family:'Space Grotesk',sans-serif; font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-muted);">Marketing Digital</span>
+            <span style="color:var(--c-violet); font-size:0.7rem;">·</span>
+            <span style="font-family:'Space Grotesk',sans-serif; font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-muted);">Adobe Creative Suite</span>
+            <span style="color:var(--c-violet); font-size:0.7rem;">·</span>
+            <span style="font-family:'Space Grotesk',sans-serif; font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-muted);">Publicidad Impresa y Digital</span>
+          </div>
+        </div>
+      </div>
+    </header>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════
+       SOBRE MÍ — Bio (full-width)
+  ══════════════════════════════════════════ -->
+  <section id="sobre-mi" class="max-w-7xl mx-auto px-6 reveal">
+
+    <div class="editorial-divider">
+      <span class="section-label">Sobre mí</span>
+      <div class="divider-line"></div>
+    </div>
+
+    <div class="w-full max-w-7xl">
+      <p style="font-family:'Inter',sans-serif; line-height:1.8; font-size:1rem; color:var(--text-muted); margin-bottom:1rem;">
+        Soy <strong style="color:var(--text-main);">Juan Felipe Torres Torres</strong>, Diseñador
+        Gráfico con amplia trayectoria en la creación de imagen corporativa, gestión de campañas
+        publicitarias y diseño multimedia.
+      </p>
+      <p style="font-family:'Inter',sans-serif; line-height:1.8; font-size:1rem; color:var(--text-muted); margin-bottom:1rem;">
+        Me especializo en la conceptualización de marcas y la ejecución de estrategias visuales
+        que comunican con precisión y coherencia. Combino el rigor del diseño clásico con
+        herramientas digitales de vanguardia para construir identidades que perduran.
+      </p>
+      <p style="font-family:'Inter',sans-serif; line-height:1.8; font-size:1rem; color:var(--text-muted);">
+        Experto en <em>Adobe Suite</em>, modelado 3D (Maya · ZBrush) y marketing digital.
+        Trabajo en la intersección del concepto, la forma y el impacto.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════
+       FORMACIÓN + SOFTWARE (lado a lado)
+  ══════════════════════════════════════════ -->
+  <section class="max-w-7xl mx-auto px-6 pb-16 reveal">
+
+    <div class="grid md:grid-cols-2 gap-12 items-start">
+
+      <!-- ─── FORMACIÓN ─── -->
+      <div>
+        <div class="editorial-divider">
+          <span class="section-label">Formación</span>
+          <div class="divider-line"></div>
+        </div>
+
+        <!-- especializacion -->
+        <div class="edu-card">
+          <div class="edu-logo">
+  <img src="assets/img/logos/edu/CUN.png" alt="CUN" />
+</div>
+          <div>
+            <p class="edu-name">Especialista en Gerencia de Marca</p>
+            <p class="edu-inst">Universidad CUN</p>
+            <p class="edu-year">2026</p>
+          </div>
+        </div>
+
+        <!-- Diplomado -->
+        <div class="edu-card">
+          <div class="edu-logo">
+  <img src="assets/img/logos/edu/umedellin.png" alt="UMedellín" />
+</div>
+          <div>
+            <p class="edu-name">Diplomado en Gerencia de Marca</p>
+            <p class="edu-inst">Universidad de Medellín</p>
+            <p class="edu-year">2025</p>
+          </div>
+        </div>
+
+        <!-- Profesional  -->
+        <div class="edu-card">
+          <div class="edu-logo">
+  <img src="assets/img/logos/edu/areandina.png" alt="Areandina" />
+</div>
+          <div>
+            <p class="edu-name">Profesional en Diseño Gráfico</p>
+            <p class="edu-inst">Fundación Universitaria Areandina</p>
+            <p class="edu-year">2019 - 2023</p>
+          </div>
+        </div>
+
+        <!-- Tecnico -->
+        <div class="edu-card">
+          <div class="edu-logo">
+  <img src="assets/img/logos/edu/sena.png" alt="SENA" />
+</div>
+          <div>
+            <p class="edu-name">Técnico en Diseño e Integración Multimedia</p>
+            <p class="edu-inst">Servicio Nacional de Aprendizaje SENA&nbsp;</p>
+            <p class="edu-year">2017 - 2018</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── SOFTWARE ─── -->
+      <div>
+        <div class="editorial-divider">
+          <span class="section-label">Software</span>
+          <div class="divider-line"></div>
+        </div>
+
+        <!-- Adobe -->
+        <p class="sw-group-label" style="font-family:'Space Grotesk',sans-serif;font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--c-violet);margin-bottom:6px;padding-bottom:4px;border-bottom:1.5px solid var(--c-violet);">Adobe</p>
+        <div style="margin-bottom:16px;display:grid;grid-template-columns:1fr 1fr;gap:0 16px;">
+          <div class="sw-card">
+            <div class="sw-logo"><img src="assets/img/logos/software/photoshop.png" alt="Photoshop" /></div>
+            <div><p class="sw-name">Photoshop</p><p class="sw-role">Retoque · Composición</p></div>
+          </div>
+          <div class="sw-card">
+            <div class="sw-logo"><img src="assets/img/logos/software/illustrator.png" alt="Illustrator" /></div>
+            <div><p class="sw-name">Illustrator</p><p class="sw-role">Vectorial · Branding</p></div>
+          </div>
+          <div class="sw-card">
+            <div class="sw-logo"><img src="assets/img/logos/software/indesign.png" alt="InDesign" /></div>
+            <div><p class="sw-name">InDesign</p><p class="sw-role">Editorial · Maquetación</p></div>
+          </div>
+          <div class="sw-card">
+            <div class="sw-logo"><img src="assets/img/logos/software/after-effects.png" alt="After Effects" /></div>
+            <div><p class="sw-name">After Effects</p><p class="sw-role">Motion · Animación</p></div>
+          </div>
+        </div>
+
+        <!-- 3D (Autodesk + Pixologic fusionados) -->
+        <p class="sw-group-label" style="font-family:'Space Grotesk',sans-serif;font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--c-violet);margin-bottom:6px;padding-bottom:4px;border-bottom:1.5px solid var(--c-violet);">3D</p>
+        <div style="margin-bottom:16px;display:grid;grid-template-columns:1fr 1fr;gap:0 16px;">
+          <div class="sw-card">
+            <div class="sw-logo"><img src="assets/img/logos/software/maya.png" alt="Maya" /></div>
+            <div><p class="sw-name">Maya</p><p class="sw-role">Modelado 3D · Rigging</p></div>
+          </div>
+          <div class="sw-card">
+            <div class="sw-logo"><img src="assets/img/logos/software/zbrush.png" alt="ZBrush" /></div>
+            <div><p class="sw-name">ZBrush</p><p class="sw-role">Escultura digital</p></div>
+          </div>
+        </div>
+
+        <!-- Office -->
+        <p class="sw-group-label" style="font-family:'Space Grotesk',sans-serif;font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--c-violet);margin-bottom:6px;padding-bottom:4px;border-bottom:1.5px solid var(--c-violet);">Microsoft</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 16px;">
+          <div class="sw-card">
+            <div class="sw-logo"><img src="assets/img/logos/software/office.png" alt="Office Suite" /></div>
+            <div><p class="sw-name">Office Suite</p><p class="sw-role">Word · Excel · PowerPoint</p></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════
+       EXPERIENCIA — Banners con carrusel
+  ══════════════════════════════════════════ -->
+  <section id="experiencia" class="max-w-7xl mx-auto px-6 py-16 reveal">
+
+    <div class="editorial-divider">
+      <span class="section-label">Experiencia</span>
+      <div class="divider-line"></div>
+    </div>
+
+    <!-- Contenedor del carrusel de banners con flechas a los lados -->
+    <div style="display:flex;align-items:stretch;gap:12px;">
+      <button onclick="prevBanner()" aria-label="Anterior" style="width:44px;flex-shrink:0;border-radius:10px;border:1.5px solid var(--border);background:var(--bg);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:1.3rem;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--c-violet)';this.style.color='var(--c-violet)'" onmouseout="this.style.borderColor='';this.style.color=''">&#10094;</button>
+      <div id="banner-carousel" class="relative" style="flex:1;">
+      <!-- ── BANNER LAIKA ── -->
+      <div class="exp-banner banner-item" style="background:linear-gradient(135deg,#683c8a,#3a1f4e);" data-index="0">
+        <div class="exp-banner-inner">
+          <div class="exp-mascot" style="top:-40px;bottom:0;height:auto;right:40px;">
+            <img src="assets/img/logos/perro laika.png" alt="Laika mascot" style="height:100%;width:auto;object-fit:contain;filter:drop-shadow(0 4px 16px rgba(0,0,0,0.35));" />
+          </div>
+          <p style="color:rgba(255,255,255,0.75);font-size:0.75rem;font-family:'Space Grotesk',sans-serif;margin-bottom:6px;letter-spacing:0.02em;">Diseñador Gráfico · Octubre 2024 – actualidad</p>
+          <img src="assets/img/logos/empresas/laika.svg" alt="Laika" style="height:40px;width:auto;margin-bottom:1rem;" />
+          <p class="exp-description" style="color:rgba(255,255,255,0.9);">
+            Diseñar piezas promocionales para diversos canales de comunicación, gestión y ejecución de contenido estático para redes sociales, y apoyo y supervisión en branding para tiendas físicas.
+          </p>
+          <button class="exp-btn-expand" onclick="toggleExpProjects(this)">
+            <span>Ver proyectos</span>
+            <svg style="width:16px;height:16px;transition:transform 0.3s;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+        </div>
+        <!-- Proyectos expandibles -->
+        <div class="exp-projects-grid">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-3 py-4 px-2">
+            <!-- PAUTA -->
+            <div class="project-card aspect-square" onclick="openLightbox(this)">
+              <img src="assets/img/laika/laika-pauta-01.jpg" alt="Pauta 1" />
+              <div class="project-overlay">
+                <span style="font-family:'Space Grotesk',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:#888;margin-bottom:6px;">Laika</span>
+                <p class="project-title">Membresía LaikaMember</p>
+                <p class="project-desc">Rebranding a la línea gráfica mostrando qué es la membresía y sus beneficios.</p>
+              </div>
+            </div>
+            <div class="project-card aspect-square" onclick="openLightbox(this)">
+              <img src="assets/img/laika/laika-pauta-02.jpg" alt="Pauta 2" />
+              <div class="project-overlay">
+                <span style="font-family:'Space Grotesk',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:#888;margin-bottom:6px;">Laika</span>
+                <p class="project-title">Beneficio de bienvenida</p>
+                <p class="project-desc">Pieza enfocada estratégicamente a atraer nuevos usuarios</p>
+              </div>
+            </div>
+            <div class="project-card aspect-square" onclick="openLightbox(this)">
+              <img src="assets/img/laika/laika-pauta-03.jpg" alt="Pauta 3" />
+              <div class="project-overlay">
+                <span style="font-family:'Space Grotesk',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:#888;margin-bottom:6px;">Laika</span>
+                <p class="project-title">Categorías Alimento</p>
+                <p class="project-desc">Pieza mostrando las opciones de alimento dentro de Laika</p>
+              </div>
+            </div>
+            <div class="project-card aspect-square" onclick="openLightbox(this)">
+              <img src="assets/img/laika/laika-pauta-04.jpg" alt="Pauta 4" />
+              <div class="project-overlay">
+                <span style="font-family:'Space Grotesk',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:#888;margin-bottom:6px;">Laika</span>
+                <p class="project-title">Lo que tu pet-amigo desea</p>
+                <p class="project-desc">Copy llamativo con todas las categorías dentro de Laika</p>
+              </div>
+            </div>
+            <div class="project-card aspect-square" onclick="openLightbox(this)">
+              <img src="assets/img/laika/laika-pauta-05.jpg" alt="Pauta 5" />
+              <div class="project-overlay">
+                <span style="font-family:'Space Grotesk',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:#888;margin-bottom:6px;">Laika</span>
+                <p class="project-title">La comunidad más grande</p>
+                <p class="project-desc">La mejor decisión para las personas que aman a su mascota</p>
+              </div>
+            </div>
+            <div class="project-card aspect-square" onclick="openLightbox(this)">
+              <img src="assets/img/laika/laika-pauta-06.jpg" alt="Pauta 6" />
+              <div class="project-overlay">
+                <span style="font-family:'Space Grotesk',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:#888;margin-bottom:6px;">Laika</span>
+                <p class="project-title">Golden Ticket</p>
+                <p class="project-desc">Mecánica que premia aleatoriamente a los usuarios durante el aniversario</p>
+              </div>
+            </div>
+            <div class="project-card aspect-square" onclick="openLightbox(this)">
+              <img src="assets/img/laika/laika-pauta-07.jpg" alt="Pauta 7" />
+              <div class="project-overlay">
+                <span style="font-family:'Space Grotesk',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:#888;margin-bottom:6px;">Laika</span>
+                <p class="project-title">Promoción Marca</p>
+                <p class="project-desc">Beneficios de la marca Pixie para la mascota</p>
+              </div>
+            </div>
+            <!-- MG -->
+            <div class="project-card aspect-square" onclick="openLightbox(this)">
+              <img src="assets/img/laika/laika-mg-01.jpg" alt="MG 1" />
+              <div class="project-overlay">
+                <span style="font-family:'Space Grotesk',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:#888;margin-bottom:6px;">Laika</span>
+                <p class="project-title">Laikaverso #8</p>
+                <p class="project-desc">Concepto principal del aniversario 2026 visto en canales digitales, branding en tiendas y activaciones pop</p>
+              </div>
+            </div>
+            <div class="project-card aspect-square" onclick="openLightbox(this)">
+              <img src="assets/img/laika/laika-mg-02.jpg" alt="MG 2" />
+              <div class="project-overlay">
+                <span style="font-family:'Space Grotesk',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:#888;margin-bottom:6px;">Laika</span>
+                <p class="project-title">Laikaween</p>
+                <p class="project-desc">Concepto principal del Halloween 2025 visto en canales digitales, branding en tiendas y activaciones pop</p>
+              </div>
+            </div>
+            <div class="project-card aspect-square" onclick="openLightbox(this)">
+              <img src="assets/img/laika/laika-mg-03.jpg" alt="MG 3" />
+              <div class="project-overlay">
+                <span style="font-family:'Space Grotesk',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:#888;margin-bottom:6px;">Laika</span>
+                <p class="project-title">LaikaClaus</p>
+                <p class="project-desc">Concepto principal de Navidad 2025 visto en canales digitales, branding en tiendas y activaciones pop</p>
+              </div>
+            </div>
+            <div class="project-card aspect-square" onclick="openLightbox(this)">
+              <img src="assets/img/laika/laika-mg-04.jpg" alt="MG 4" />
+              <div class="project-overlay">
+                <span style="font-family:'Space Grotesk',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:#888;margin-bottom:6px;">Laika</span>
+                <p class="project-title">Zoomies</p>
+                <p class="project-desc">Concepto principal de juguetes y accesorios lanzado en junio 2026 en tiendas y canales digitales</p>
+              </div>
+            </div>
+            <div class="project-card aspect-square" onclick="openLightbox(this)">
+              <img src="assets/img/laika/laika-mg-05.jpg" alt="MG 5" />
+              <div class="project-overlay">
+                <span style="font-family:'Space Grotesk',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:#888;margin-bottom:6px;">Laika</span>
+                <p class="project-title">Mundialito Pet</p>
+                <p class="project-desc">Gráfica usada en promoción durante el comienzo del Mundial</p>
+              </div>
+            </div>
+            <div class="project-card aspect-square" onclick="openLightbox(this)">
+              <img src="assets/img/laika/laika-mg-06.jpg" alt="MG 6" />
+              <div class="project-overlay">
+                <span style="font-family:'Space Grotesk',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:#888;margin-bottom:6px;">Laika</span>
+                <p class="project-title">Misión Galactica</p>
+                <p class="project-desc">Gráfica usada en promoción durante el mes de julio 2026</p>
+              </div>
+            </div>
+            <div class="project-card aspect-square" onclick="openLightbox(this)">
+              <img src="assets/img/laika/laika-mg-07.jpg" alt="MG 7" />
+              <div class="project-overlay">
+                <span style="font-family:'Space Grotesk',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:#888;margin-bottom:6px;">Laika</span>
+                <p class="project-title">Ofertón Laika</p>
+                <p class="project-desc">Gráfica usada en promoción durante el mes de mayo 2026</p>
+              </div>
+            </div>
+            <div class="project-card aspect-square" onclick="openLightbox(this)">
+              <img src="assets/img/laika/laika-mg-08.jpg" alt="MG 8" />
+              <div class="project-overlay">
+                <span style="font-family:'Space Grotesk',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:#888;margin-bottom:6px;">Laika</span>
+                <p class="project-title">Promoción Marca</p>
+                <p class="project-desc">Beneficios de la marca Grandvita para la mascota</p>
+              </div>
+            </div>
+            <div class="project-card aspect-square" onclick="openLightbox(this)">
+              <img src="assets/img/laika/laika-mg-09.jpg" alt="MG 9" />
+              <div class="project-overlay">
+                <span style="font-family:'Space Grotesk',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:#888;margin-bottom:6px;">Laika</span>
+                <p class="project-title">Precios Imbatibles Invierno</p>
+                <p class="project-desc">Gráfica usada en promoción durante el mes de julio 2026 en Chile</p>
+              </div>
+            </div>
+            <!-- REDES -->
+            <div class="project-card aspect-square" onclick="openLightbox(this)">
+              <img src="assets/img/laika/laika-redes-01.jpg" alt="Redes 1" />
+              <div class="project-overlay">
+                <span style="font-family:'Space Grotesk',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:#888;margin-bottom:6px;">Laika</span>
+                <p class="project-title">Conjuros Halloween</p>
+                <p class="project-desc">Carrusel viral del mes de octubre 2025.</p>
+              </div>
+            </div>
+            <div class="project-card aspect-square" onclick="openLightbox(this)">
+              <img src="assets/img/laika/laika-redes-02.jpg" alt="Redes 2" />
+              <div class="project-overlay">
+                <span style="font-family:'Space Grotesk',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:#888;margin-bottom:6px;">Laika</span>
+                <p class="project-title">Cuando te olvida tu gato</p>
+                <p class="project-desc">Carrusel viral del mes de abril 2026.</p>
+              </div>
+            </div>
+            <div class="project-card aspect-square" onclick="openLightbox(this)">
+              <img src="assets/img/laika/laika-redes-03.jpg" alt="Redes 3" />
+              <div class="project-overlay">
+                <span style="font-family:'Space Grotesk',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:#888;margin-bottom:6px;">Laika</span>
+                <p class="project-title">Frases donación</p>
+                <p class="project-desc">Post que incentiva la donación en conjunto con el apoyo a la selección.</p>
+              </div> 
+            </div>
+            <!-- POP -->
+            <div class="project-card aspect-square" onclick="openLightbox(this)">
+              <img src="assets/img/laika/laika-pop-01.jpg" alt="POP 1" />
+              <div class="project-overlay">
+                <span style="font-family:'Space Grotesk',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:#888;margin-bottom:6px;">Laika</span>
+                <p class="project-title">Carro Eléctrico Aniversario 2026</p>
+                <p class="project-desc">Branding perteneciente a campaña de cumpleaños #8</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── BANNER SWIMMER ── -->
+      <div class="exp-banner banner-item" style="background:linear-gradient(135deg,#f2f2f2,#d0d0d0);display:none;" data-index="1">
+        <div class="exp-banner-inner">
+          <p style="color:rgba(0,0,0,0.7);font-size:0.75rem;font-family:'Space Grotesk',sans-serif;margin-bottom:6px;letter-spacing:0.02em;">Jefe de diseño · Enero 2023 – Octubre 2024</p>
+          <img src="assets/img/logos/empresas/swimmer.svg" alt="Swimmer LTDA" style="height:40px;width:auto;margin-bottom:1rem;" />
+          <p class="exp-description" style="color:rgba(0,0,0,0.75);">
+            Liderar la estrategia visual y publicación de piezas publicitarias para diversos canales digitales, conceptualizar y diseñar estampados exclusivos para clientes institucionales.
+          </p>
+          <button class="exp-btn-expand" onclick="toggleExpProjects(this)">
+            <span>Ver proyectos</span>
+            <svg style="width:16px;height:16px;transition:transform 0.3s;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+        </div>
+        <div class="exp-mascot" style="height:360px;right:10px;">
+          <img src="assets/img/logos/nadador swimmer.png" alt="Swimmer mascot" style="height:100%;width:auto;object-fit:contain;filter:drop-shadow(0 4px 16px rgba(0,0,0,0.35));" />
+        </div>
+        <div class="exp-projects-grid">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-3 py-4 px-2">
+            <!-- REDES -->
+            <div class="project-card aspect-square" onclick="openLightbox(this)">
+              <img src="assets/img/swimmer/swimmer-redes-01.jpg" alt="Redes 1" />
+              <div class="project-overlay">
+                <span style="font-family:'Space Grotesk',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:#888;margin-bottom:6px;">Swimmer LTDA</span>
+                <p class="project-title">Propulsión Eyectiva</p>
+                <p class="project-desc">Explicación de diferentes métodos de impulso al nadar</p>
+              </div>
+            </div>
+            <div class="project-card aspect-square" onclick="openLightbox(this)">
+              <img src="assets/img/swimmer/swimmer-redes-02.jpg" alt="Redes 2" />
+              <div class="project-overlay">
+                <span style="font-family:'Space Grotesk',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:#888;margin-bottom:6px;">Swimmer LTDA</span>
+                <p class="project-title">Propulsión de brazo</p>
+                <p class="project-desc">Carrusel de diferentes tipos de movimientos con los brazos</p>
+              </div>
+            </div>
+            <div class="project-card aspect-square" onclick="openLightbox(this)">
+              <img src="assets/img/swimmer/swimmer-redes-03.jpg" alt="Redes 3" />
+              <div class="project-overlay">
+                <span style="font-family:'Space Grotesk',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:#888;margin-bottom:6px;">Swimmer LTDA</span>
+                <p class="project-title">Motivación al nadar</p>
+                <p class="project-desc">Carrusel con frases que llevan a la victoria</p>
+              </div>
+            </div>
+            <div class="project-card aspect-square" onclick="openLightbox(this)">
+              <img src="assets/img/swimmer/swimmer-redes-04.jpg" alt="Redes 4" />
+              <div class="project-overlay">
+                <span style="font-family:'Space Grotesk',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:#888;margin-bottom:6px;">Swimmer LTDA</span>
+                <p class="project-title">Entrenamiento muscular</p>
+                <p class="project-desc">Carrusel con diferentes fases del entrenamiento.</p>
+              </div>
+            </div>
+            <div class="project-card aspect-square" onclick="openLightbox(this)">
+              <img src="assets/img/swimmer/swimmer-redes-05.jpg" alt="Redes 5" />
+              <div class="project-overlay">
+                <span style="font-family:'Space Grotesk',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:#888;margin-bottom:6px;">Swimmer LTDA</span>
+                <p class="project-title">Black Days</p>
+                <p class="project-desc">Pieza promocional.</p>
+              </div>
+            </div>
+            <!-- UNIFORMES -->
+            <div class="project-card aspect-square" onclick="openLightbox(this)">
+              <img src="assets/img/swimmer/swimmer-uniforme-01.jpeg" alt="Uniforme 1" />
+              <div class="project-overlay">
+                <span style="font-family:'Space Grotesk',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:#888;margin-bottom:6px;">Swimmer LTDA</span>
+                <p class="project-title">Uniforme IMDERS 2024</p>
+                <p class="project-desc">Propuesta de uniforme para representantes</p>
+              </div>
+            </div>
+            <div class="project-card aspect-square" onclick="openLightbox(this)">
+              <img src="assets/img/swimmer/swimmer-uniforme-02.jpeg" alt="Uniforme 2" />
+              <div class="project-overlay">
+                <span style="font-family:'Space Grotesk',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:#888;margin-bottom:6px;">Swimmer LTDA</span>
+                <p class="project-title">Uniforme IMDERS 2024</p>
+                <p class="project-desc">Propuesta de uniforme para representantes</p>
+              </div>
+            </div>
+            <div class="project-card aspect-square" onclick="openLightbox(this)">
+              <img src="assets/img/swimmer/swimmer-uniforme-03.jpeg" alt="Uniforme 3" />
+              <div class="project-overlay">
+                <span style="font-family:'Space Grotesk',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:#888;margin-bottom:6px;">Swimmer LTDA</span>
+                <p class="project-title">Uniforme IMDERS 2024</p>
+                <p class="project-desc">Propuesta de uniforme para representantes</p>
+              </div>
+            </div>
+            <div class="project-card aspect-square" onclick="openLightbox(this)">
+              <img src="assets/img/swimmer/swimmer-uniforme-04.jpeg" alt="Uniforme 4" />
+              <div class="project-overlay">
+                <span style="font-family:'Space Grotesk',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:#888;margin-bottom:6px;">Swimmer LTDA</span>
+                <p class="project-title">Uniforme IMDERS 2024</p>
+                <p class="project-desc">Propuesta de uniforme para representantes</p>
+              </div>
+            </div>
+            <div class="project-card aspect-square" onclick="openLightbox(this)">
+              <img src="assets/img/swimmer/swimmer-uniforme-05.jpg" alt="Uniforme 5" />
+              <div class="project-overlay">
+                <span style="font-family:'Space Grotesk',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:#888;margin-bottom:6px;">Swimmer LTDA</span>
+                <p class="project-title">Uniforme Copa Compensar 2024</p>
+                <p class="project-desc">Propuesta de uniforme para representantes</p>
+              </div>
+            </div>
+            <div class="project-card aspect-square" onclick="openLightbox(this)">
+              <img src="assets/img/swimmer/swimmer-uniforme-06.jpg" alt="Uniforme 6" />
+              <div class="project-overlay">
+                <span style="font-family:'Space Grotesk',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:#888;margin-bottom:6px;">Swimmer LTDA</span>
+                <p class="project-title">Uniforme Copa Compensar 2024</p>
+                <p class="project-desc">Propuesta de uniforme para representantes</p>
+              </div>
+            </div>
+            <div class="project-card aspect-square" onclick="openLightbox(this)">
+              <img src="assets/img/swimmer/swimmer-uniforme-07.jpg" alt="Uniforme 7" />
+              <div class="project-overlay">
+                <span style="font-family:'Space Grotesk',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:#888;margin-bottom:6px;">Swimmer LTDA</span>
+                <p class="project-title">Uniforme Copa Compensar 2024</p>
+                <p class="project-desc">Propuesta de uniforme para representantes</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── BANNER APEX AMERICA ── -->
+      <div class="exp-banner banner-item" style="background:linear-gradient(90deg,#0494f4,#11028f);display:none;" data-index="2">
+        <div class="exp-banner-inner">
+          <p style="color:rgba(255,255,255,0.75);font-size:0.75rem;font-family:'Space Grotesk',sans-serif;margin-bottom:6px;letter-spacing:0.02em;">Diseñador de imagen corporativa · Enero – Octubre 2022</p>
+          <img src="assets/img/logos/empresas/apex.png" alt="Apex America" style="height:40px;width:auto;margin-bottom:1rem;" />
+          <p class="exp-description" style="color:rgba(255,255,255,0.9);">
+            Gestionar la imagen corporativa y de comunicaciones internas, dirigir y producir contenido audiovisual informativo y presentaciones corporativas utilizando herramientas de Google Suite.
+          </p>
+          <button class="exp-btn-expand" onclick="toggleExpProjects(this)">
+            <span>Ver proyectos</span>
+            <svg style="width:16px;height:16px;transition:transform 0.3s;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+        </div>
+        <div class="exp-mascot" style="height:360px;right:0;">
+          <img src="assets/img/logos/mujer apex.png" alt="Apex mascot" style="height:100%;width:auto;object-fit:contain;filter:drop-shadow(0 4px 16px rgba(0,0,0,0.35));" />
+        </div>
+        <div class="exp-projects-grid" style="position:relative;z-index:1;">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-3 py-4 px-2">
+            <!-- INTERNO -->
+            <div class="project-card aspect-square" onclick="openLightbox(this)">
+              <img src="assets/img/apex/apex-interno-01.jpg" alt="Interno 1" />
+              <div class="project-overlay">
+                <span style="font-family:'Space Grotesk',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:#888;margin-bottom:6px;">Apex America</span>
+                <p class="project-title">Convocatoria interna</p>
+                <p class="project-desc">Oportunidad de formación para colaboradores</p>
+              </div>
+            </div>
+            <div class="project-card aspect-square" onclick="openLightbox(this)">
+              <img src="assets/img/apex/apex-interno-02.jpg" alt="Interno 2" />
+              <div class="project-overlay">
+                <span style="font-family:'Space Grotesk',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:#888;margin-bottom:6px;">Apex America</span>
+                <p class="project-title">Evaluacion mensual</p>
+                <p class="project-desc">Encuesta de satisfacción interna</p>
+              </div>
+            </div>
+            <div class="project-card aspect-square" onclick="openLightbox(this)">
+              <img src="assets/img/apex/apex-interno-03.jpg" alt="Interno 3" />
+              <div class="project-overlay">
+                <span style="font-family:'Space Grotesk',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:#888;margin-bottom:6px;">Apex America</span>
+                <p class="project-title">Convocatoria interna</p>
+                <p class="project-desc">Oportunidad de formación para colaboradores</p>
+              </div>
+            </div>
+            <div class="project-card aspect-square" onclick="openLightbox(this)">
+              <img src="assets/img/apex/apex-interno-04.jpg" alt="Interno 4" />
+              <div class="project-overlay">
+                <span style="font-family:'Space Grotesk',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:#888;margin-bottom:6px;">Apex America</span>
+                <p class="project-title">Asistente emocional</p>
+                <p class="project-desc">Bot de ayuda para los colaboradores</p>
+              </div>
+            </div>
+            <div class="project-card aspect-square" onclick="openLightbox(this)">
+              <img src="assets/img/apex/apex-interno-05.jpg" alt="Interno 5" />
+              <div class="project-overlay">
+                <span style="font-family:'Space Grotesk',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:#888;margin-bottom:6px;">Apex America</span>
+                <p class="project-title">Evento</p>
+                <p class="project-desc">Invitación a charla con figuras estratégicas de la empresa</p>
+              </div>
+            </div>
+            <div class="project-card aspect-square" onclick="openLightbox(this)">
+              <img src="assets/img/apex/apex-interno-06.jpg" alt="Interno 6" />
+              <div class="project-overlay">
+                <span style="font-family:'Space Grotesk',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:#888;margin-bottom:6px;">Apex America</span>
+                <p class="project-title">Convocatoria interna</p>
+                <p class="project-desc">Oportunidad de formación para colaboradores</p>
+              </div>
+            </div>
+            <div class="project-card aspect-square" onclick="openLightbox(this)">
+              <img src="assets/img/apex/apex-interno-07.jpg" alt="Interno 7" />
+              <div class="project-overlay">
+                <span style="font-family:'Space Grotesk',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:#888;margin-bottom:6px;">Apex America</span>
+                <p class="project-title">Aviso IT</p>
+                <p class="project-desc">Comunicación del equipo de tecnología</p>
+              </div>
+            </div>
+            <div class="project-card aspect-square" onclick="openLightbox(this)">
+              <img src="assets/img/apex/apex-interno-08.jpg" alt="Interno 8" />
+              <div class="project-overlay">
+                <span style="font-family:'Space Grotesk',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:#888;margin-bottom:6px;">Apex America</span>
+                <p class="project-title">Comunicaciones 2.0</p>
+                <p class="project-desc">Renovación del proceso de solicitud de piezas</p>
+              </div>
+            </div>
+            <div class="project-card aspect-square" onclick="openLightbox(this)">
+              <img src="assets/img/apex/apex-interno-09.jpg" alt="Interno 9" />
+              <div class="project-overlay">
+                <span style="font-family:'Space Grotesk',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:#888;margin-bottom:6px;">Apex America</span>
+                <p class="project-title">Maraton Apex 2024</p>
+                <p class="project-desc">Convocatoria para inscripción a la maratón </p>
+              </div>
+            </div>
+            <!-- CUIDADO -->
+            <div class="project-card aspect-square" onclick="openLightbox(this)">
+              <img src="assets/img/apex/apex-cuidado-01.jpg" alt="Cuidado 1" />
+              <div class="project-overlay">
+                <span style="font-family:'Space Grotesk',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:#888;margin-bottom:6px;">Apex America</span>
+                <p class="project-title">Invitación a concientización</p>
+                <p class="project-desc">Pieza de cuidado interno</p>
+              </div>
+            </div>
+            <div class="project-card aspect-square" onclick="openLightbox(this)">
+              <img src="assets/img/apex/apex-cuidado-02.jpg" alt="Cuidado 2" />
+              <div class="project-overlay">
+                <span style="font-family:'Space Grotesk',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:#888;margin-bottom:6px;">Apex America</span>
+                <p class="project-title">Invitación a concientización</p>
+                <p class="project-desc">Pieza de cuidado interno</p>
+              </div>
+            </div>
+            <div class="project-card aspect-square" onclick="openLightbox(this)">
+              <img src="assets/img/apex/apex-cuidado-03.jpg" alt="Cuidado 3" />
+              <div class="project-overlay">
+                <span style="font-family:'Space Grotesk',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:#888;margin-bottom:6px;">Apex America</span>
+                <p class="project-title">Pieza de cuidado interno</p>
+                <p class="project-desc">Invitación a conocer los beneficios de la plataforma</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /banner-carousel -->
+      <button onclick="nextBanner()" aria-label="Siguiente" style="width:44px;flex-shrink:0;border-radius:10px;border:1.5px solid var(--border);background:var(--bg);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:1.3rem;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--c-violet)';this.style.color='var(--c-violet)'" onmouseout="this.style.borderColor='';this.style.color=''">&#10095;</button>
+    </div><!-- /flex container -->
+  </section>
+
+
+  <!-- ══════════════════════════════════════════
+       CARRUSEL DE PIEZAS
+       (DESHABILITADO — borra "style='display:none'" para reactivar)
+  ══════════════════════════════════════════ -->
+  <section class="py-16 overflow-hidden reveal" style="background:var(--bg-soft);display:none;">
+    <div class="max-w-7xl mx-auto px-6 mb-8">
+      <div class="editorial-divider" style="margin-top:0;">
+        <span class="section-label">Piezas</span>
+        <div class="divider-line"></div>
+      </div>
+      <p style="font-family:'Space Grotesk',sans-serif;font-size:0.82rem;color:var(--text-muted);letter-spacing:0.06em;margin-top:0.75rem;">
+        Una selección de trabajos realizados a lo largo de mi carrera
+      </p>
+    </div>
+
+    <div style="-webkit-mask-image:linear-gradient(to right,transparent 0%,black 8%,black 92%,transparent 100%);mask-image:linear-gradient(to right,transparent 0%,black 8%,black 92%,transparent 100%);">
+      <div class="carousel-track">
+
+        <div class="carousel-item">
+          <div class="img-placeholder" style="min-height:200px;">
+            <svg style="width:28px;height:28px;opacity:0.25;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+            <span style="font-size:0.68rem;color:var(--text-light);font-family:'Space Grotesk',sans-serif;">carrusel/pieza-01.jpg</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-placeholder" style="min-height:200px;">
+            <svg style="width:28px;height:28px;opacity:0.25;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+            <span style="font-size:0.68rem;color:var(--text-light);font-family:'Space Grotesk',sans-serif;">carrusel/pieza-02.jpg</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-placeholder" style="min-height:200px;">
+            <svg style="width:28px;height:28px;opacity:0.25;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+            <span style="font-size:0.68rem;color:var(--text-light);font-family:'Space Grotesk',sans-serif;">carrusel/pieza-03.jpg</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-placeholder" style="min-height:200px;">
+            <svg style="width:28px;height:28px;opacity:0.25;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+            <span style="font-size:0.68rem;color:var(--text-light);font-family:'Space Grotesk',sans-serif;">carrusel/pieza-04.jpg</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-placeholder" style="min-height:200px;">
+            <svg style="width:28px;height:28px;opacity:0.25;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+            <span style="font-size:0.68rem;color:var(--text-light);font-family:'Space Grotesk',sans-serif;">carrusel/pieza-05.jpg</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-placeholder" style="min-height:200px;">
+            <svg style="width:28px;height:28px;opacity:0.25;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+            <span style="font-size:0.68rem;color:var(--text-light);font-family:'Space Grotesk',sans-serif;">carrusel/pieza-06.jpg</span>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="img-placeholder" style="min-height:200px;">
+            <svg style="width:28px;height:28px;opacity:0.25;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+            <span style="font-size:0.68rem;color:var(--text-light);font-family:'Space Grotesk',sans-serif;">carrusel/pieza-01.jpg</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-placeholder" style="min-height:200px;">
+            <svg style="width:28px;height:28px;opacity:0.25;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+            <span style="font-size:0.68rem;color:var(--text-light);font-family:'Space Grotesk',sans-serif;">carrusel/pieza-02.jpg</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-placeholder" style="min-height:200px;">
+            <svg style="width:28px;height:28px;opacity:0.25;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+            <span style="font-size:0.68rem;color:var(--text-light);font-family:'Space Grotesk',sans-serif;">carrusel/pieza-03.jpg</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-placeholder" style="min-height:200px;">
+            <svg style="width:28px;height:28px;opacity:0.25;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+            <span style="font-size:0.68rem;color:var(--text-light);font-family:'Space Grotesk',sans-serif;">carrusel/pieza-04.jpg</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-placeholder" style="min-height:200px;">
+            <svg style="width:28px;height:28px;opacity:0.25;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+            <span style="font-size:0.68rem;color:var(--text-light);font-family:'Space Grotesk',sans-serif;">carrusel/pieza-05.jpg</span>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="img-placeholder" style="min-height:200px;">
+            <svg style="width:28px;height:28px;opacity:0.25;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+            <span style="font-size:0.68rem;color:var(--text-light);font-family:'Space Grotesk',sans-serif;">carrusel/pieza-06.jpg</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════
+       CONTACTO / FOOTER
+  ══════════════════════════════════════════ -->
+  <footer id="contacto" class="reveal" style="background:var(--footer-bg);color:var(--footer-text);">
+    <div class="max-w-7xl mx-auto px-6 py-16">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
+        <div>
+          <p style="font-family:'Space Grotesk',sans-serif;font-size:2.6rem;font-weight:700;line-height:1;margin-bottom:0.75rem;">
+            Hablemos
+          </p>
+          <p style="font-family:'Inter',sans-serif;font-size:1.1rem;color:#888;max-width:400px;line-height:1.6;">
+            Si tienes un proyecto en mente o quieres colaborar, escríbeme.
+          </p>
+        </div>
+        <div style="text-align:right;">
+          <p style="font-family:'Space Grotesk',sans-serif;font-size:0.85rem;letter-spacing:0.14em;text-transform:uppercase;color:#777;margin-bottom:0.6rem;">Contacto</p>
+          <a href="mailto:juan.torres@email.com" style="font-family:'Space Grotesk',sans-serif;font-size:1.35rem;color:#fff;text-decoration:none;transition:color 0.2s;display:block;margin-bottom:0.4rem;" onmouseover="this.style.color='#7D39EB'" onmouseout="this.style.color='#fff'">juan.torres@email.com</a>
+          <a href="#" class="footer-link">LinkedIn</a>
+          <span style="color:#444;margin:0 6px;">·</span>
+          <a href="#" class="footer-link">Behance</a>
+          <span style="color:#444;margin:0 6px;">·</span>
+          <a href="#" class="footer-link">Instagram</a>
+        </div>
+      </div>
+      <div style="border-top:1px solid var(--footer-border, #333);margin-top:3rem;padding-top:1.5rem;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem;">
+        <p style="font-family:'Inter',sans-serif;font-size:0.85rem;color:var(--footer-muted, #666);">&copy; 2025 Juan Felipe Torres Torres</p>
+        <p style="font-family:'Inter',sans-serif;font-size:0.85rem;color:var(--footer-muted, #666);">Diseño gráfico &amp; branding</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ══════════════════════════════════════════
+       LIGHTBOX
+  ══════════════════════════════════════════ -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+    <button class="lightbox-close" onclick="closeLightbox(event)">&times;</button>
+    <div class="lightbox-content" id="lightboxContent">
+      <button class="lightbox-nav prev" onclick="prevLightbox(event)" id="lbPrev">&#10094;</button>
+      <button class="lightbox-nav next" onclick="nextLightbox(event)" id="lbNext">&#10095;</button>
+      <img id="lightboxImg" src="" alt="" />
+      <div class="lightbox-info">
+        <h3 id="lightboxTitle"></h3>
+        <p id="lightboxDesc" style="font-family:'Inter',sans-serif;font-size:0.85rem;"></p>
+        <p id="lightboxCounter" style="font-family:'Space Grotesk',sans-serif;font-size:0.7rem;color:#666;margin-top:6px;"></p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════
+       JAVASCRIPT
+  ══════════════════════════════════════════ -->
+  <script>
+    // ── TEMA OSCURO / CLARO ──
+    const toggleBtn = document.getElementById('themeToggle');
+    const toggleIcon = document.getElementById('toggleIcon');
+    const html = document.documentElement;
+
+    function setTheme(theme) {
+      html.setAttribute('data-theme', theme);
+      toggleIcon.textContent = theme === 'dark' ? '🌙' : '☀️';
+      localStorage.setItem('theme', theme);
+      if (window.__drawGrid) window.__drawGrid();
+    }
+
+    if (localStorage.getItem('theme') === 'dark') setTheme('dark');
+
+    toggleBtn.addEventListener('click', () => {
+      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      setTheme(next);
+    });
+
+    // ── CARRUSEL DE BANNERS ──
+    let currentBanner = 0;
+    const banners = document.querySelectorAll('.banner-item');
+    const bannerNames = ['Laika', 'Swimmer LTDA', 'Apex America'];
+    const bannerNameEl = document.getElementById('bannerName');
+
+    function collapseAllGrids() {
+      document.querySelectorAll('.exp-projects-grid.open').forEach(grid => {
+        grid.classList.remove('open');
+        const btn = grid.closest('.exp-banner').querySelector('.exp-btn-expand');
+        if (btn) {
+          btn.classList.remove('active');
+          const arrow = btn.querySelector('svg');
+          if (arrow) arrow.style.transform = '';
+        }
+      });
+    }
+
+    function showBanner(index) {
+      collapseAllGrids();
+      banners.forEach((b, i) => {
+        b.style.display = i === index ? 'flex' : 'none';
+      });
+      if (bannerNameEl) {
+        bannerNameEl.textContent = bannerNames[index];
+      }
+      doPositionMascots();
+    }
+
+    function doPositionMascots() {
+      var banner = document.querySelectorAll('.banner-item')[currentBanner];
+      if (!banner) banner = document.querySelector('.banner-item');
+      var mascot = banner.querySelector(':scope > .exp-mascot');
+      if (mascot) {
+        mascot.style.bottom = 'auto';
+        var bannerH = banner.getBoundingClientRect().height;
+        var h = parseInt(mascot.style.height) || 360;
+        mascot.style.top = (bannerH - h) + 'px';
+      }
+    }
+
+    function prevBanner() {
+      currentBanner = (currentBanner - 1 + banners.length) % banners.length;
+      showBanner(currentBanner);
+    }
+
+    function nextBanner() {
+      currentBanner = (currentBanner + 1) % banners.length;
+      showBanner(currentBanner);
+    }
+
+    showBanner(currentBanner);
+    doPositionMascots();
+
+    // ── EXPANDIR / CONTRAER PROYECTOS ──
+    function toggleExpProjects(btn) {
+      const banner = btn.closest('.exp-banner');
+      const grid = banner.querySelector('.exp-projects-grid');
+      const isOpen = grid.classList.contains('open');
+      const arrow = btn.querySelector('svg');
+      const mascot = banner.querySelector(':scope > .exp-mascot');
+
+      if (isOpen) {
+        grid.classList.remove('open');
+        btn.classList.remove('active');
+        arrow.style.transform = '';
+        if (mascot) mascot.style.transform = '';
+      } else {
+        if (mascot) {
+          grid.style.transition = 'none';
+          grid.style.maxHeight = '6000px';
+          grid.style.overflow = 'visible';
+          grid.style.opacity = '1';
+          void grid.offsetHeight;
+          const cards = grid.querySelectorAll('.project-card');
+          const thirdCard = cards[2];
+          if (thirdCard) {
+            const mascotRect = mascot.getBoundingClientRect();
+            const cardRect = thirdCard.getBoundingClientRect();
+            const diff = mascotRect.bottom - cardRect.top;
+            mascot.style.transform = 'translateY(-' + diff + 'px)';
+          } else {
+            mascot.style.transform = '';
+          }
+          grid.style.transition = '';
+          grid.style.maxHeight = '';
+          grid.style.overflow = '';
+          grid.style.opacity = '';
+        } else {
+          grid.classList.add('open');
+        }
+        grid.classList.add('open');
+        btn.classList.add('active');
+        arrow.style.transform = 'rotate(180deg)';
+      }
+    }
+
+    // ── LIGHTBOX CON NAVEGACIÓN ──
+    let lbCards = [];
+    let lbCurrentIndex = -1;
+    let lbCompanyCards = {};
+
+    function getCompanyName(card) {
+      const overlay = card.querySelector('.project-overlay');
+      if (overlay) {
+        const span = overlay.querySelector('span');
+        if (span) return span.textContent.trim();
+      }
+      const banner = card.closest('.banner-item');
+      if (banner) {
+        const nameEl = banner.querySelector('.exp-logo-text');
+        if (nameEl) return nameEl.textContent.trim();
+      }
+      return '';
+    }
+
+    function openLightbox(card) {
+      const lb = document.getElementById('lightbox');
+      const img = lb.querySelector('#lightboxImg');
+      const title = lb.querySelector('#lightboxTitle');
+      const desc = lb.querySelector('#lightboxDesc');
+      const counter = lb.querySelector('#lightboxCounter');
+
+      const company = getCompanyName(card);
+
+      // Obtener todas las cards de la misma empresa
+      const banner = card.closest('.banner-item');
+      lbCards = banner ? Array.from(banner.querySelectorAll('.project-card')) : [card];
+      lbCurrentIndex = lbCards.indexOf(card);
+
+      // Cache por empresa
+      lbCompanyCards[company] = lbCards;
+
+      showLightboxItem(lbCurrentIndex);
+      lb.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function showLightboxItem(index) {
+      const lb = document.getElementById('lightbox');
+      const img = lb.querySelector('#lightboxImg');
+      const title = lb.querySelector('#lightboxTitle');
+      const desc = lb.querySelector('#lightboxDesc');
+      const counter = lb.querySelector('#lightboxCounter');
+
+      const card = lbCards[index];
+      if (!card) return;
+
+      const overlay = card.querySelector('.project-overlay');
+      if (overlay) {
+        const t = overlay.querySelector('.project-title');
+        const d = overlay.querySelector('.project-desc');
+        title.textContent = t ? t.textContent : '';
+        desc.textContent = d ? d.textContent : '';
+      }
+
+      const realImg = card.querySelector('img');
+      if (realImg && realImg.src) {
+        img.src = realImg.src;
+        img.alt = realImg.alt || '';
+        img.style.display = '';
+      }
+
+      counter.textContent = (index + 1) + ' / ' + lbCards.length;
+
+      const prevBtn = document.getElementById('lbPrev');
+      const nextBtn = document.getElementById('lbNext');
+      prevBtn.style.display = lbCards.length > 1 ? '' : 'none';
+      nextBtn.style.display = lbCards.length > 1 ? '' : 'none';
+    }
+
+    function prevLightbox(e) {
+      if (e) e.stopPropagation();
+      if (lbCards.length === 0) return;
+      lbCurrentIndex = (lbCurrentIndex - 1 + lbCards.length) % lbCards.length;
+      showLightboxItem(lbCurrentIndex);
+    }
+
+    function nextLightbox(e) {
+      if (e) e.stopPropagation();
+      if (lbCards.length === 0) return;
+      lbCurrentIndex = (lbCurrentIndex + 1) % lbCards.length;
+      showLightboxItem(lbCurrentIndex);
+    }
+
+    function closeLightbox(e) {
+      if (e) e.stopPropagation();
+      const lb = document.getElementById('lightbox');
+      lb.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox(e);
+      if (e.key === 'ArrowLeft') prevLightbox(e);
+      if (e.key === 'ArrowRight') nextLightbox(e);
+    });
+
+    // ── SCROLL REVEAL ──
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealEls.forEach(el => revealObserver.observe(el));
+
+    // ── CURSOR PERSONALIZADO ──
+    const cursor = document.getElementById('cursorDot');
+    if (cursor && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      let mouseX = 0, mouseY = 0;
+      let cursorX = 0, cursorY = 0;
+
+      document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+      });
+
+      function animateCursor() {
+        cursorX += (mouseX - cursorX) * 0.15;
+        cursorY += (mouseY - cursorY) * 0.15;
+        cursor.style.left = cursorX + 'px';
+        cursor.style.top = cursorY + 'px';
+        requestAnimationFrame(animateCursor);
+      }
+      animateCursor();
+
+      document.querySelectorAll('a, button, .project-card, .exp-trigger, .exp-btn-expand, .exp-banner-arrow-static').forEach(el => {
+        el.addEventListener('mouseenter', () => cursor.classList.add('hovering'));
+        el.addEventListener('mouseleave', () => cursor.classList.remove('hovering'));
+      });
+    }
+
+    // ── GRID INTERACTIVO ──
+    const gridCanvas = document.getElementById('interactiveGrid');
+    if (gridCanvas && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const ctx = gridCanvas.getContext('2d');
+      let gridMouseX = -1000, gridMouseY = -1000;
+      let hoverTarget = null;
+      let frostedFade = 0;
+      let frostedTarget = 0;
+      const spacing = 28;
+
+      function getGridColor(forFooter) {
+        if (forFooter) return '#C8FF33';
+        const theme = document.documentElement.getAttribute('data-theme');
+        return theme === 'dark' ? '#C8FF33' : '#7D39EB';
+      }
+
+      function resizeGrid() {
+        gridCanvas.width = window.innerWidth;
+        gridCanvas.height = window.innerHeight;
+        drawGrid();
+      }
+
+      function drawGrid() {
+        const w = gridCanvas.width, h = gridCanvas.height;
+        ctx.clearRect(0, 0, w, h);
+
+        const isFooter = hoverTarget && hoverTarget.closest('#contacto, footer');
+        const isContent = hoverTarget && (
+          hoverTarget.closest('nav, header, section, .exp-banner, .project-card, button, a, .lightbox, .exp-btn-expand, label, input, textarea, .banner-item')
+        );
+
+        const color = getGridColor(!!isFooter);
+        const maxDist = 160;
+
+        for (let x = 0; x < w; x += spacing) {
+          for (let y = 0; y < h; y += spacing) {
+            const dx = x - gridMouseX;
+            const dy = y - gridMouseY;
+            const dist = Math.sqrt(dx*dx + dy*dy);
+            let alpha = 0.06;
+            let radius = 0.8;
+
+            if (dist < maxDist) {
+              const t = 1 - dist/maxDist;
+              const normalAlpha = 0.06 + t * 0.25;
+              const normalRadius = 0.8 + t * 1.8;
+              const frostedAlpha = 0.06 + t * 0.94;
+              const frostedRadius = 0.8 + t * 5.0;
+              alpha = normalAlpha + (frostedAlpha - normalAlpha) * frostedFade;
+              radius = normalRadius + (frostedRadius - normalRadius) * frostedFade;
+            }
+
+            if (isContent && !isFooter) {
+              alpha *= (0.12 + (1 - 0.12) * frostedFade);
+            }
+
+            ctx.fillStyle = color;
+            ctx.globalAlpha = alpha;
+            ctx.beginPath();
+            ctx.arc(x, y, radius, 0, Math.PI * 2);
+            ctx.fill();
+          }
+        }
+        ctx.globalAlpha = 1;
+      }
+
+      function gridAnimLoop() {
+        if (Math.abs(frostedTarget - frostedFade) > 0.001) {
+          frostedFade += (frostedTarget - frostedFade) * 0.06;
+          drawGrid();
+        }
+        requestAnimationFrame(gridAnimLoop);
+      }
+
+      document.addEventListener('mousemove', (e) => {
+        hoverTarget = e.target;
+        const isFrosted = hoverTarget && hoverTarget.closest('.header-bg-wrap');
+        frostedTarget = isFrosted ? 1 : 0;
+        gridMouseX = e.clientX;
+        gridMouseY = e.clientY;
+        drawGrid();
+      });
+
+      window.__drawGrid = drawGrid;
+
+      window.addEventListener('resize', resizeGrid);
+      resizeGrid();
+      gridAnimLoop();
+    }
+
+    // ── PARTICULAS FLOTANTES ──
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const colors = ['#7D39EB', '#C8FF33', '#7D39EB', '#C8FF33', '#FFFFFF'];
+      for (let i = 0; i < 18; i++) {
+        const p = document.createElement('div');
+        p.className = 'particle';
+        const size = 6 + Math.random() * 12;
+        p.style.width = size + 'px';
+        p.style.height = size + 'px';
+        p.style.background = colors[Math.floor(Math.random() * colors.length)];
+        p.style.left = Math.random() * 100 + 'vw';
+        p.style.animationDuration = (30 + Math.random() * 40) + 's';
+        p.style.animationDelay = -(Math.random() * 50) + 's';
+        p.style.opacity = 0;
+        document.body.appendChild(p);
+      }
+    }
+
+    // ── FRANJAS DE VIDRIO PLISADO ──
+    function initGlassStripes() {
+      const overlay = document.querySelector('.frosted-overlay');
+      if (!overlay) return;
+      const stripeWidth = 48;
+      const count = Math.ceil(window.innerWidth / stripeWidth);
+      overlay.innerHTML = '';
+      for (let i = 0; i < count; i++) {
+        const stripe = document.createElement('div');
+        stripe.className = 'glass-stripe';
+        overlay.appendChild(stripe);
+      }
+    }
+    initGlassStripes();
+    window.addEventListener('resize', initGlassStripes);
+  </script>
+
+</body>
+</html>
